@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :searches
   
   def self.find_or_create_from_auth(auth)
     user = find_or_create_by(

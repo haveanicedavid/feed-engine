@@ -1,0 +1,25 @@
+<nav class="teal darken-2" role="navigation">
+  <div class="nav-wrapper container">
+  <a id="logo-container" href="/" class="brand-logo yellow-text text-lighten-4">Clever Name</a>
+  <%#= image_tag("bg-9.jpg", alt: "Unsplashed background img 1") %>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#" class="yellow-text text-lighten-4">Navbar Link</a></li>
+      <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+
+
+    <!-- Mobile nav -->
+    <ul id="nav-mobile" class="side-nav">
+      <li><a class="waves-effect waves-light btn"><i class="mdi-file-cloud left z-depth-3"></i>Sign Up</a></li>
+      <li><a href="/find">Search</a></li>
+      <li><a href="/learn-more">Learn More</a></li>
+      <!-- <li><a href="#">Navbar Link</a></li> -->
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+  </div>
+</nav>

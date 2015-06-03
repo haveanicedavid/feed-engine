@@ -1,0 +1,5 @@
+<%= current_user.name %>
+
+<%= image_tag current_user.image_url %><br>
+
+<%= link_to "logout", logout_path, method: "delete"  %>

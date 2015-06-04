@@ -4,7 +4,11 @@
   <%#= image_tag("bg-9.jpg", alt: "Unsplashed background img 1") %>
     <ul class="right hide-on-med-and-down">
       <li><a href="#" class="yellow-text text-lighten-4">Navbar Link</a></li>
-      <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %>
+      <% if current_user.nil? %>
+        <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %>
+      <% else %>
+        <li><%= link_to "logout", logout_path, method: "delete", class: "yellow-text text-lighten-4" %>
+      <% end %>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">

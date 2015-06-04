@@ -12,7 +12,6 @@ class SearchesController < ApplicationController
   def search_results
     @word = params["search"]["word"]
     session[:word] = @word
-    
     redirect_to results_path
   end
   

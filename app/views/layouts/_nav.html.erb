@@ -3,11 +3,12 @@
   <a id="logo-container" href="/" class="brand-logo yellow-text text-lighten-4">Clever Name</a>
   <%#= image_tag("bg-9.jpg", alt: "Unsplashed background img 1") %>
     <ul class="right hide-on-med-and-down">
-      <li><a href="#" class="yellow-text text-lighten-4">Navbar Link</a></li>
       <% if current_user.nil? %>
-        <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %>
+        <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %></li>
       <% else %>
-        <li><%= link_to "logout", logout_path, method: "delete", class: "yellow-text text-lighten-4" %>
+        <li><%= image_tag current_user.image_url, class: "responsive-img", id: "profile-pic" %></li>
+        <li><%= link_to "Dashboard", user_path(current_user), class: "yellow-text text-lighten-4" %></li>
+        <li><%= link_to "logout", logout_path, method: "delete", class: "yellow-text text-lighten-4" %></li>
       <% end %>
     </ul>
 

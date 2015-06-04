@@ -1,14 +1,17 @@
-// body {
-//   background: url("bg-9.jpg") #00D repeat-y fixed;
-// }
 body { 
-
-  // background: url("friendly-background.jpg") no-repeat 0px 50px;
-  background: url("friendly-background.jpg") no-repeat center center fixed; 
+  background: image-url("handtweet.jpg") repeat-y fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+}
+
+.display-cards {
+  min-height: 245px;
+}
+
+.card-foot{
+  position:absolute; 
+  bottom:0;
 }
 
 #profile-pic {
@@ -22,12 +25,4 @@ body {
 
 
 }
-
-
-  // background-size: contain;
-
-
-// .tweet-cards {
-//   min-height: 500px auto;
-// }
 

@@ -24,6 +24,7 @@ gem 'materialize-sass'
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'twitter'
+gem 'sprockets_better_errors'
 
 
 # Use ActiveModel has_secure_password

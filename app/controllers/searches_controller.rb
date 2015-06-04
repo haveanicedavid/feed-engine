@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
-  
+  respond_to :json
+
   def index
   end
   
@@ -7,6 +8,10 @@ class SearchesController < ApplicationController
   end
   
   def create
+    binding.pry
+    @word = params["word"]
+    @tweets = SearchResults.new(@word).all_tweets
+    respond_with @tweets
   end
   
   def search_results

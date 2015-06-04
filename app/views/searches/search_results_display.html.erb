@@ -2,7 +2,13 @@
   <h2>Tweets</h2>
 </div>
 
+<%= form_tag "/analyses", method: "post" do  %>
+    <%= hidden_field_tag :tweets, @tweets %>
+    <%= hidden_field_tag :word, @word %>
+    <%= submit_tag "Analyze" %>
+<% end %>
 
+  
 <div class="row">
   <% @tweets.each do |tweet| %>
   <div class="col s12 m4">

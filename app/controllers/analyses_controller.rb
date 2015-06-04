@@ -1,7 +1,7 @@
 class AnalysesController < ApplicationController
   
-  # def create
-  #   sentiment = 
-  # end
+  def create
+    binding.pry
+  end
   
 end

@@ -4,10 +4,6 @@
       <div class="card-content white-text">
         <h4 class="teal-text text-darken-4"><%= current_user.name %></h4>
         <p>@<%= current_user.nickname %></p>
-      <!-- </div>
-    </div>
-    <div class="row">
-      <div class="col s3"> -->
         <p><%= current_user.location %></p>
       </div>
     </div>
@@ -18,9 +14,11 @@
 
 <div class="row search-div">
   <div class="col s6 offset-s3">
+    <%= form_tag results_path, method: "post" do %>
     <i class="mdi-action-search prefix"></i>
       <%= label_tag "Search" %>
-      <%= text_field_tag "searchword"%>
-      <%= submit_tag "Submit", class: "btn search" %>
+      <%= text_field_tag "search[word]" %>
+      <%= submit_tag "Submit", class: "btn" %>
+    <% end %>
   </div>
 </div>

@@ -1,10 +1,28 @@
-// body {
-//   background: url("bg-9.jpg") #00D repeat-y fixed;
-// }
-html { 
-  background: url("bg-8.jpg") no-repeat center center fixed; 
+body { 
+  background: image-url("handtweet.jpg") repeat-y fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
+
+.display-cards {
+  min-height: 245px;
+}
+
+.card-foot{
+  position:absolute; 
+  bottom:0;
+}
+
+#profile-pic {
+  margin-top: 10px;
+  border: solid 2px white;
+  border-radius: 15px;
+}
+
+.user-header {
+  margin-top: 25px;
+
+
+}
+

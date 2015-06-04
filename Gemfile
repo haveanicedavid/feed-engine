@@ -25,6 +25,7 @@ gem 'omniauth-twitter'
 gem 'figaro'
 gem 'twitter'
 gem 'sprockets_better_errors'
+gem 'sentimental' 
 
 
 # Use ActiveModel has_secure_password

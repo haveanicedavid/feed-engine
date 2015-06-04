@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
     uid:  auth.uid 
     )
     
-    user.nickname = auth.info.nickname
-    user.name = auth.info.name
-    user.location = auth.info.location
+    user.nickname  = auth.info.nickname
+    user.name      = auth.info.name
+    user.location  = auth.info.location
     user.image_url = auth.info.image
-    user.token = auth.credentials.token
+    user.token     = auth.credentials.token
     user.save!
     
     user

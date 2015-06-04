@@ -8,9 +8,26 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  // background-size: contain;
+  background-size: cover;
 }
+
+#profile-pic {
+  margin-top: 10px;
+  border: solid 2px white;
+  border-radius: 15px;
+}
+
+.user-header {
+  margin-top: 25px;
+
+
+}
+
+
+  // background-size: contain;
+
 
 // .tweet-cards {
 //   min-height: 500px auto;
 // }
+

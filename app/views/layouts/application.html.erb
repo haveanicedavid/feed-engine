@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :class => "flash-#{name} flash " %>
+<% end %>
 
 <%= render :partial => 'layouts/nav.html.erb' %>
 <%= yield %>

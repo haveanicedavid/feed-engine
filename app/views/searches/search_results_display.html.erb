@@ -6,12 +6,23 @@
   <% @array_of_text << "#{tweet.text}|||||" %>
   <% end %>
 
-<%= form_tag "/analyses", method: "post" do  %>
-    <%= hidden_field_tag :tweets, @array_of_text %>
-    <%= hidden_field_tag :word, @word %>
-    <%= hidden_field_tag :user_id, current_user.id %>
-    <%= submit_tag "Analyze" %>
-<% end %>
+<div class="row">
+  <div class="col s2">
+    <%= form_tag "/analyses", method: "post" do  %>
+        <%= hidden_field_tag :tweets, @array_of_text %>
+        <%= hidden_field_tag :word, @word %>
+        <%= hidden_field_tag :user_id, current_user.id %>
+        <%= submit_tag "Analyze", class: "btn" %>
+    <% end %>
+  </div>
+  <div class="col s3">
+    <%= form_tag searches_path, method: "post" do %>
+      <%= hidden_field_tag "search[word]", @word %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= submit_tag "Save Search", class: "btn" %>
+    <% end %>
+  </div>
+</div>
 
   
 <div class="row">

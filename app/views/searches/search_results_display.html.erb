@@ -1,10 +1,15 @@
 <div class="container center-align">
   <h2>Tweets</h2>
 </div>
+  <% @array_of_text = [] %>
+  <% @tweets.each do |tweet| %>
+  <% @array_of_text << "#{tweet.text}|||||" %>
+  <% end %>
 
 <%= form_tag "/analyses", method: "post" do  %>
-    <%= hidden_field_tag :tweets, @tweets %>
+    <%= hidden_field_tag :tweets, @array_of_text %>
     <%= hidden_field_tag :word, @word %>
+    <%= hidden_field_tag :user_id, current_user.id %>
     <%= submit_tag "Analyze" %>
 <% end %>
 
@@ -16,7 +21,8 @@
       <div class="card-content white-text">
         <span class="card-title"><%= @word %></span>
 
-        <p> <%= tweet %> </p>
+        <p> <%= tweet.text %> </p>
+
       </div>
       <div class="card-action card-foot">
         <a href="#">Link to tweet?</a>

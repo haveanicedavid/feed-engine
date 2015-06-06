@@ -13,6 +13,6 @@ class TwittersearchService
   end
   
   def search_by(search)
-    client.search(search)
+    client.search(search, lang: "en").first(20)
   end
 end

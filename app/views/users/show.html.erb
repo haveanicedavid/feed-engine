@@ -22,3 +22,35 @@
     <% end %>
   </div>
 </div>
+
+<% @analyses.each do |a| %>
+<div class="row">
+  <div class="col s3">
+    <h4><%= a.keyword %></h4>
+    <div class="col s4">
+      <h6><%= a.created_at.to_date %></h6>
+    </div>
+  </div>
+<div class="row">
+  <table class="centered hoverable responsive-table analyses-table cyan lighten-4">
+    <thead>
+      <tr>
+        <th data-field="number">Number</th>
+        <th data-field="name">Sentiment</th>
+        <th data-field="number">Polarity</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% a.analysis.each do |k, v| %>
+      <tr>
+        <td><%= v.split(",").first.to_s.delete!("[") %></td>
+        <td><%= k %></td>
+        <td><%= v.split(",").last.to_s.delete!("]").to_f.round(3) %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  <% end %>
+</div>
+
+

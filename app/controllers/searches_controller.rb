@@ -8,7 +8,8 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @word = params["word"]
+    @word = params["searchword"]
+    session[:word] = @word
     @tweets = SearchResults.new(@word).all_tweets
     respond_with @tweets
   end

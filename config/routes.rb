@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :searches, only: [:index, :show, :create]
 
+  
  post '/results', to: "searches#search_results"
  get '/results', to: "searches#search_results_display"
-
 end

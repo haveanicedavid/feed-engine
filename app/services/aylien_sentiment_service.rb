@@ -1,11 +1,6 @@
 require 'net/http'
 require 'uri'
 require 'json'
-# require 'aylien_text_api'
-
-# AYLIEN_APPLICATION_ID  = '1c207de9'
-# AYLIEN_APPLICATION_KEY = '9df2bda7a5c448399ff308a77675c402'
-
 
 class AylienAnalyzer
 
@@ -13,7 +8,7 @@ class AylienAnalyzer
       url = URI.parse("https://api.aylien.com/api/v1/#{endpoint}")
       headers = {
         "Accept"                           =>   "application/json",
-        "X-AYLIEN-TextAPI-Application-ID"  =>   ENV["AYLIEN_APPLICATION_ID"]
+        "X-AYLIEN-TextAPI-Application-ID"  =>   ENV["AYLIEN_APPLICATION_ID"],
         "X-AYLIEN-TextAPI-Application-Key" =>   ENV["AYLIEN_APPLICATION_KEY"]
       }
 
@@ -31,11 +26,10 @@ class AylienAnalyzer
     def analyze(tweet)
       parameters = {"text" => tweet }
 
-      sentiment = call_api("sentiment", parameters)
-      language  = call_api("language", parameters)
+      call_api("sentiment", parameters)
 
-      puts "Sentiment: #{sentiment["polarity"]} (#{sentiment["polarity_confidence"]})"
-      puts "Language: #{language["lang"]} (#{language["confidence"]})"
+      # puts "Sentiment: #{sentiment["polarity"]} (#{sentiment["polarity_confidence"]})"
+      # puts "Language: #{language["lang"]} (#{language["confidence"]})"
     end
 
   # parameters = {"text" => "John is a very good football player?"}

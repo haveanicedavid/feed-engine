@@ -1,5 +1,5 @@
 <div class="container center-align">
-  <h2>Tweets</h2>
+  <h2><%= @word %></h2>
 </div>
   <% @array_of_text = [] %>
   <% @tweets.each do |tweet| %>
@@ -30,14 +30,13 @@
   <div class="col s12 m4">
     <div class="card blue-grey darken-1 tweet-cards z-depth-3 display-cards">
       <div class="card-content white-text">
-        <span class="card-title"><%= @word %></span>
+        <span class="card-title"><%= link_to "@#{tweet.screen_name}", "https://twitter.com/#{tweet.screen_name}", target: "_blank" %></span>
 
         <p> <%= tweet.text %> </p>
 
       </div>
-      <div class="card-action card-foot">
-        <a href="#">Link to tweet?</a>
-        <!-- <a href='#' class="right">This is a link</a> -->
+      <div class="card-action card-foot blue-text text-lighten-4">
+        <h6><%= tweet.created_at.to_date %></h6>
       </div>
     </div>
   </div>

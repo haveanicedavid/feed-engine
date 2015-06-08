@@ -9,6 +9,10 @@ body {
   min-height: 245px;
 }
 
+#logo {
+  font-family: 'Permanent Marker', cursive;
+}
+
 .card-foot{
   position:absolute; 
   bottom:0;
@@ -24,6 +28,10 @@ body {
   margin-top: 25px;
 }
 
-.analyses-table {
-  
+.landing-quote {
+  font-family: 'Nunito', sans-serif;
+}
+
+#quote-block {
+  border-radius: 25px;
 }

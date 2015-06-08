@@ -1,14 +1,14 @@
 <nav class="cyan darken-2" role="navigation">
   <div class="nav-wrapper container">
-  <a id="logo-container" href="/" class="brand-logo white-text">Clever Name</a>
+  <a id="logo-container" href="/" class="brand-logo white-text" id="logo">tweetsum</a>
   <%#= image_tag("bg-9.jpg", alt: "Unsplashed background img 1") %>
     <ul class="right hide-on-med-and-down">
       <% if current_user.nil? %>
-        <li><%= link_to "login with twitter", "/auth/twitter", class: "yellow-text text-lighten-4" %></li>
+        <li><%= link_to "login with twitter", "/auth/twitter", class: "white-text" %></li>
       <% else %>
         <li><%= image_tag current_user.image_url, class: "responsive-img", id: "profile-pic" %></li>
-        <li><%= link_to "Dashboard", user_path(current_user), class: "yellow-text text-lighten-4" %></li>
-        <li><%= link_to "logout", logout_path, method: "delete", class: "yellow-text text-lighten-4" %></li>
+        <li><%= link_to "Dashboard", user_path(current_user), class: "white-text" %></li>
+        <li><%= link_to "logout", logout_path, method: "delete", class: "white-text" %></li>
       <% end %>
     </ul>
 

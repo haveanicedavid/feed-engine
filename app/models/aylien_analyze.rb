@@ -1,18 +1,17 @@
 require_relative "../services/aylien_sentiment_service"
 
 class AylienAnalyze
-  attr_reader :service
   
-  def service
-    @service ||= AylienAnalyzer.new
+  def initialize
+    @service = AylienSentimentService.new
   end
   
   def analyze_tweets(tweets) 
     tweets.map do |tweet|
       a = AnalysisGroup.new
-      a.sentiment = service.analyze(tweet)["polarity"]
-      a.polarity = service.analyze(tweet)["polarity_confidence"]
-      a.subjectivity = service.analyze(tweet)["subjectivity_confidence"]
+      a.sentiment = @service.analyze(tweet)["polarity"]
+      a.polarity = @service.analyze(tweet)["polarity_confidence"]
+      a.subjectivity = @service.analyze(tweet)["subjectivity_confidence"]
       a
     end
   end

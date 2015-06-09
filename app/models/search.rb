@@ -1,6 +1,6 @@
 class Search < ActiveRecord::Base
   belongs_to :user
-  
+
   def self.run_saved_searches
     count = 0
     aylien = AylienAnalyze.new

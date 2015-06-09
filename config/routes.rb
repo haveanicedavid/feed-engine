@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
+  get '/email', to: "users#email"
   resources :searches, only: [:index, :show, :create, :update]
 
 

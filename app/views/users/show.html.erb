@@ -56,6 +56,22 @@
   </div>
 </div>
 
+<!-- testing -->
+<div class="row search-div">
+  <div class="col s6 offset-s3">
+    <i class="mdi-action-search prefix search"></i>
+    <input id="search" class="searchword" type="search" required>
+    <label for="search"><i class="mdi-action-search"></i></label>
+    <i class="mdi-navigation-close"></i>
+    <input type="submit" value="Submit "class="searchTweet">
+  </div>
+</div>
+
+<!-- display -->
+<div class="row" id="tweets">
+</div>
+<!-- end testing -->
+
 <% @analyses.each do |a| %>
 <div class="row">
   <div class="col s3">

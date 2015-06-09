@@ -45,25 +45,14 @@
   </div>
 </div>
 
-<div class="row search-div">
-  <div class="col s6 offset-s3">
-    <%= form_tag results_path, method: "post" do %>
-    <i class="mdi-action-search prefix"></i>
-      <%= label_tag "Quick Search" %>
-      <%= text_field_tag "search[keyword]" %>
-      <%= submit_tag "Submit", class: "btn" %>
-    <% end %>
-  </div>
-</div>
 
 <!-- testing -->
 <div class="row search-div">
   <div class="col s6 offset-s3">
     <i class="mdi-action-search prefix search"></i>
+    <label for="searchword">Quick Search</label>
     <input id="search" class="searchword" type="search" required>
-    <label for="search"><i class="mdi-action-search"></i></label>
-    <i class="mdi-navigation-close"></i>
-    <input type="submit" value="Submit "class="searchTweet">
+    <input type="submit" value="Submit "class="btn searchTweet">
   </div>
 </div>
 

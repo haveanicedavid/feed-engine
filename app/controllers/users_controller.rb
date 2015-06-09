@@ -15,10 +15,4 @@ class UsersController < ApplicationController
       flash[:error] = "didn't work"
     end
   end
-
-  def email
-    UserMailer.daily_digest_email(current_user).deliver_now
-    redirect_to current_user
-  end
-
 end

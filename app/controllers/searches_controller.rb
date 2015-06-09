@@ -18,9 +18,6 @@ class SearchesController < ApplicationController
       flash[:errors] = @search.errors.full_messages.join(", ")
       redirect_to user_path(current_user)
     end
-
-    # format.json { render json: { errors: @item.errors.messages }, status: 400 } 
-    # respond_with JSON.parse(@search)
   end
   
   def update
@@ -39,11 +36,6 @@ class SearchesController < ApplicationController
     session[:word] = @word
     @tweets = SearchResults.new(@word).all_tweets
     respond_with @tweets, status: 201, location: user_path(current_user)
-  end
-
-  def search_results_display
-    @word = session[:word]
-    @tweets = SearchResults.new(@word).all_tweets
   end
   
   private

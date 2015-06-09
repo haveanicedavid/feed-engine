@@ -45,16 +45,21 @@
   </div>
 </div>
 
+
+<!-- testing -->
 <div class="row search-div">
   <div class="col s6 offset-s3">
-    <%= form_tag results_path, method: "post" do %>
-    <i class="mdi-action-search prefix"></i>
-      <%= label_tag "Quick Search" %>
-      <%= text_field_tag "search[keyword]" %>
-      <%= submit_tag "Submit", class: "btn" %>
-    <% end %>
+    <i class="mdi-action-search prefix search"></i>
+    <label for="searchword">Quick Search</label>
+    <input id="search" class="searchword" type="search" required>
+    <input type="submit" value="Submit "class="btn searchTweet">
   </div>
 </div>
+
+<!-- display -->
+<div class="row" id="tweets">
+</div>
+<!-- end testing -->
 
 <% @analyses.each do |a| %>
 <div class="row">

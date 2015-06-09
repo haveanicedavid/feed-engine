@@ -1,3 +1,3 @@
 class StaticPagesController < ApplicationController
-  skip_before_action :require_email
+  skip_before_action :check_email
 end

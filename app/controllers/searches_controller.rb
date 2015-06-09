@@ -19,7 +19,7 @@ class SearchesController < ApplicationController
       redirect_to user_path(current_user)
     end
 
-    format.json { render json: { errors: @item.errors.messages }, status: 400 } 
+    # format.json { render json: { errors: @item.errors.messages }, status: 400 } 
     # respond_with JSON.parse(@search)
   end
   

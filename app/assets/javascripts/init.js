@@ -4,7 +4,6 @@
     var $tweets = $("#tweets");
 
     $('.button-collapse').sideNav();
-    $('.parallax').parallax();
 
     $(".searchTweet").click(function(event){
 
@@ -36,5 +35,6 @@
 
     });
 
+      $('.parallax').parallax();
   }); // end of document ready
 })(jQuery); // end of jQuery name space

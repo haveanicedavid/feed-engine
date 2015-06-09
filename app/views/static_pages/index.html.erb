@@ -1,24 +1,67 @@
- <div class="section no-pad-bot" id="index-banner">
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
     <div class="container">
       <br><br>
-      <!-- <h1 class="header center amber-text">Tweet Tweet</h1> -->
-      <!-- <div class="row center"> -->
-        <!-- <h5 class="header col s12 light">Do we want to say anything here?</h5> -->
-      <!-- </div> -->
-      <div class="row">
-        <div class= "col s7 cyan darken-2" id="quote-block">
-          <h3 class="white-text landing-quote">Providing a digestable summary of your twitter mentions.</h3>
+      <h1 class="header center teal-text text-lighten-2">tweetsum</h1>
+      <div class="row center">
+        <h5 class="header col s12 light landing-quote">Providing a digestable summary of your twitter mentions.</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <div class="parallax"><%= image_tag("parallax1.jpg", alt: "Unsplashed background img 1") %></div>
+</div>
+
+
+<div class="container">
+  <div class="section">
+
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
+          <h5 class="center">Quick Search</h5>
+
+          <p class="light">Enter a keyword or twitter handle and get a fast analysis of what people are saying.</p> </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="mdi-action-favorite-outline"></i></h2>
+          <h5 class="center">Save a Search</h5>
+
+          <p class="light"> Save a search, and receive a daily email digest with a full analysis.</p>
         </div>
       </div>
-      <br>
-      <br>
-       <!-- <div class="row">
-         <div class= "col s3 cyan">
-           <h6 class="white-text landing-quote">How it works:</h6>
-         </div>
-       </div> -->
 
-      
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="mdi-social-public"></i></h2>
+          <h5 class="center">Track Trends Over Time</h5>
+
+          <p class="light">Check your dashboard to see how a saved search is trending over time.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="section">
+
+
+  </div>
+</div>
+
+
+<!-- old -->
+ <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
       <ul class="collapsible" data-collapsible="accordion">
         <li>
           <div class="collapsible-header cyan darken-1 white-text"><i class="mdi-action-search"></i>Quick Search</div>
@@ -38,7 +81,9 @@
   </div>
 
 
+<%= render :partial => 'layouts/footer.html.erb' %>
+
+
 
  
 
-  </div>

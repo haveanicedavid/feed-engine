@@ -1,0 +1,34 @@
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!"><h6>Login</h6></a></li>
+  <li><a href="/find"><h6>Map</h6></a></li>
+  <li class="divider"></li>
+  <li><a href="#!"><h6>Bluh</h6></a></li>
+</ul>
+
+<nav class="cyan darken-2" role="navigation">
+  <div class="nav-wrapper">
+    <a id="logo-container" href="/" class="brand-logo white-text" id="logo">tweetsum</a>
+    <ul class="right hide-on-med-and-down">
+      <% if current_user.nil? %>
+        <li><%= link_to "Login with twitter", "/auth/twitter", class: "white-text" %></li>
+      <% else %>
+        <li><%= image_tag current_user.image_url, class: "responsive-img", id: "profile-pic" %></li>
+        <li><%= link_to "Dashboard", user_path(current_user), class: "white-text" %></li>
+        <li><%= link_to "Sign Out", logout_path, method: "delete", class: "white-text" %></li>
+      <% end %>
+    </ul>
+
+    <!-- Mobile Navbar -->
+    <ul id="nav-mobile" class="side-nav cyan darken-2">
+      <% if current_user.nil? %>
+        <li><%= link_to "login with twitter", "/auth/twitter", class: "white-text" %>
+      <% else %>
+        <li><%= link_to "Dashboard", user_path(current_user), class: "white-text" %></li>
+        <li><%= link_to "Sign Out", logout_path, method: "delete", class: "white-text" %></li>
+      <% end %>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </div>
+</nav>

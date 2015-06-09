@@ -1,7 +1,6 @@
 <nav class="cyan darken-2" role="navigation">
   <div class="nav-wrapper container">
   <a id="logo-container" href="/" class="brand-logo white-text" id="logo">tweetsum</a>
-  <%#= image_tag("bg-9.jpg", alt: "Unsplashed background img 1") %>
     <ul class="right hide-on-med-and-down">
       <% if current_user.nil? %>
         <li><%= link_to "login with twitter", "/auth/twitter", class: "white-text" %></li>

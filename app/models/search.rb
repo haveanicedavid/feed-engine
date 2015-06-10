@@ -12,6 +12,7 @@ class Search < ActiveRecord::Base
       analysis = Analysis.create(user_id: search.user_id, keyword: search.word, analysis: analyze)
       UserMailer.daily_digest_email(search.user, analysis).deliver_later
       count += 1
+      sleep(45)
     end
     puts "#{count} searches analyzed."
   end

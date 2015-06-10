@@ -9,8 +9,8 @@ class Search < ActiveRecord::Base
         tweet.text
       end
       analyze = aylien.grouped_analysis(tweets)
-      Analysis.create(user_id: search.user_id, keyword: search.word, analysis: analyze)
-      UserMailer.daily_digest_email(search.user).deliver_now
+      analysis = Analysis.create(user_id: search.user_id, keyword: search.word, analysis: analyze)
+      UserMailer.daily_digest_email(search.user, analysis).deliver_later
       count += 1
     end
     puts "#{count} searches analyzed."

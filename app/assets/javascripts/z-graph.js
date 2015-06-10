@@ -19,7 +19,7 @@ $(document).ready(function() {
 	};
 	
 	var chart = c3.generate({
-    bindto: '#chart',
+    bindto: '.chart',
     data: {
       columns: [
         negativeData,

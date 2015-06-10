@@ -21,7 +21,7 @@
   </div>
 </div>
 
-
+<% @saved_searches.each do |ss| %>
 <div class="positive hidden">
   <% positive = [] %>
   <% @saved_searches.each do |ss| %>
@@ -64,7 +64,10 @@
   <%= positive %>
 </div>
 
-<div id="chart"></div>
+  <%= ss.word %>
+  <div class="chart"></div>
+<% end %>
+  
 
 
 <!-- <div class="row user-header">

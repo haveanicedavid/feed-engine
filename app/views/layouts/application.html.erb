@@ -18,7 +18,7 @@
 <%= render :partial => 'layouts/new_nav.html.erb' %>
 
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :class => "flash-#{name} flash " %>
+  <%= content_tag :div, msg, :class => "flash-#{name}" %>
 <% end %>
 
 <%= yield %>

@@ -21,6 +21,55 @@
   </div>
 </div>
 
+<% @saved_searches.each do |ss| %>
+<div class="positive hidden">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "positive" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+<div class="negative hidden">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "negative" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+<div class="neutral hidden">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "neutral" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+  <%= ss.word %>
+  <div class="chart"></div>
+<% end %>
+  
+
+
 <!-- <div class="row user-header">
   <div class="col s4 offset-s2">
       <table class="centered hoverable responsive-table teal lighten-3">

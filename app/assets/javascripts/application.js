@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require materialize-sprockets
 //= require d3
+//= require c3
+//= require materialize-sprockets
 //= require_tree .

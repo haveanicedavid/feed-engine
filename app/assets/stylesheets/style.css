@@ -26,6 +26,7 @@ p {
   height: auto;
   width: 100%;
   color: rgba(255,255,255,.9);
+  z-index: 2;
 }
   .parallax-container .section {
     width: 100%;

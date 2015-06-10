@@ -13,10 +13,10 @@ class SearchesController < ApplicationController
    
     if @search.save
       @search.update(user_id: current_user.id)
-      # flash[:success] = " #{@search.word} is a saved search!"
+      flash.now[:success] = " #{@search.word} is a saved search!"
       redirect_to searches_path
     else
-      flash[:errors] = @search.errors.full_messages.join(", ")
+      flash.now[:errors] = @search.errors.full_messages.join(", ")
       redirect_to user_path(current_user)
     end
   end

@@ -10,6 +10,10 @@ body {
   opacity: 0;
 }
 
+.flash-success{
+  background-color: rgb(19, 129, 76);
+}
+
 .saved-searches {
   background: black;
   opacity: .7;
@@ -22,8 +26,17 @@ body {
   width: 30px;
 }
 
+.hidden {
+  display: none;
+}
+
+.chart {
+  background-color: white;
+}
+
 #landing-background {
   background: white;
+  z-index: 1;
 }
 
 .display-cards {

@@ -2,7 +2,9 @@ class SearchesController < ApplicationController
   respond_to :json
 
   def index
-    @saved_searches = Search.where(user_id: current_user.id, active?: true)
+    if current_user
+      @saved_searches = Search.where(user_id: current_user.id, active?: true)
+    end
   end
 
   def show

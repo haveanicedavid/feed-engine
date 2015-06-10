@@ -1,4 +1,4 @@
-/* Custom Stylesheet */
+  /* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
@@ -21,10 +21,13 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 325px;
+  max-height: 350px;
   line-height: 0;
   height: auto;
+  width: 100%;
   color: rgba(255,255,255,.9);
+  z-index: 2;
 }
   .parallax-container .section {
     width: 100%;

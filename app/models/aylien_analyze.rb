@@ -11,7 +11,7 @@ class AylienAnalyze
       a = AnalysisGroup.new
       a.sentiment = @service.analyze(tweet)["polarity"]
       a.polarity = @service.analyze(tweet)["polarity_confidence"]
-      a.subjectivity = @service.analyze(tweet)["subjectivity_confidence"]
+      # a.subjectivity = @service.analyze(tweet)["subjectivity_confidence"]
       a
     end
   end

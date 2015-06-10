@@ -15,12 +15,13 @@
 </head>
 <body>
   
+<%= render :partial => 'layouts/new_nav.html.erb' %>
+
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :class => "flash-#{name} flash " %>
 <% end %>
 
-<%= render :partial => 'layouts/new_nav.html.erb' %>
 <%= yield %>
-<%#= render :partial => 'layouts/footer.html.erb' %>
+
 </body>
 </html>

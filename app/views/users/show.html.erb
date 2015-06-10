@@ -1,53 +1,6 @@
-<div class="row user-header">
-  <!-- <div class="col s3"> -->
-    <!-- <div class="card teal lighten-3"> -->
-      <!-- <div class="card-content white-text"> -->
-        <!-- <h4 class="teal-text text-darken-4"><%#= current_user.name %></h4> -->
-        <!-- <p>@<%#= current_user.nickname %></p> -->
-        <!-- <p><%#= current_user.location %></p> -->
-      <!-- </div> -->
-    <!-- </div> -->
-  <!-- </div> -->
-  
-  <div class="col s4 offset-s2">
-      <table class="centered hoverable responsive-table teal lighten-3">
-        <thead>
-          <h6> Saved Searches</h6>
-          <tr>
-            <th data-field="name">Word</th>
-            <th data-field="boolean">Active?</th>
-            <th></th>
-          </tr>
-        <thead>
-          <tbody>
-            <% @saved_searches.each do |ss| %>
-            <tr>
-              <td><%= ss.word %></td>
-              <td><%= ss.active? %></td>
-            <td><%= link_to "Deactivate", search_path(ss), method: "patch" %>
-            </tr>
-          </tbody>
-          <% end %>
-        </table>
-  </div>
-</div>
-<div class="row">
-</div>
-
-<div class="row search-div">
-  <div class="col s6 offset-s3">
-    <%= form_tag searches_path, method: "post" do %>
-    <i class="mdi-action-search prefix"></i>
-      <%= label_tag "Save Search" %>
-      <%= text_field_tag "search[word]" %>
-      <%= hidden_field_tag :user_id, current_user.id %>
-      <%= submit_tag "Save Search", class: "btn" %>
-    <% end %>
-  </div>
-</div>
-
-
 <!-- testing -->
+<br>
+<br>
   <div class="row search-div">
   <div class="col s6 offset-s3">
     <i class="mdi-action-search prefix search"></i>

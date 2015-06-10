@@ -2,6 +2,7 @@ class SearchesController < ApplicationController
   respond_to :json
 
   def index
+    @saved_searches = Search.where(user_id: current_user.id, active?: true)
   end
 
   def show
@@ -12,8 +13,8 @@ class SearchesController < ApplicationController
    
     if @search.save
       @search.update(user_id: current_user.id)
-      flash[:success] = " #{@search.word} is a saved search!"
-      redirect_to user_path(current_user)
+      # flash[:success] = " #{@search.word} is a saved search!"
+      redirect_to searches_path
     else
       flash[:errors] = @search.errors.full_messages.join(", ")
       redirect_to user_path(current_user)
@@ -32,9 +33,9 @@ class SearchesController < ApplicationController
   end
 
   def search_results
-    @word = params["word"]
+    @word          = params["word"]
     session[:word] = @word
-    @tweets = SearchResults.new(@word).all_tweets
+    @tweets        = SearchResults.new(@word).all_tweets
     respond_with @tweets, status: 201, location: user_path(current_user)
   end
   

@@ -1,16 +1,17 @@
+<body id="landing-background">
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
       <br><br>
-      <h1 class="header center teal-text text-lighten-2">tweetsum</h1>
+      <h1 class="header center black-text text-darken-2">tweetsum</h1>
       <div class="row center">
-        <h5 class="header col s12 light landing-quote">Providing a digestable summary of your twitter mentions.</h5>
+        <h5 class="header col s12 landing-quote cyan-text text-darken-3">Providing a scheduled summary of your twitter sentiment.</h5>
       </div>
       <br><br>
 
     </div>
   </div>
-  <div class="parallax"><%= image_tag("parallax1.jpg", alt: "Unsplashed background img 1") %></div>
+  <div class="parallax"><%= image_tag("throttle.png", alt: "Unsplashed background img 1") %></div>
 </div>
 
 
@@ -21,27 +22,27 @@
     <div class="row">
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-social-group"></i></h2>
-          <h5 class="center">Quick Search</h5>
+          <h2 class="center black-text"><i class="mdi-action-search"></i></h2>
+          <h5 class="center cyan-text text-darken-2">Quick Search</h5>
 
-          <p class="light">Enter a keyword or twitter handle and get a fast analysis of what people are saying.</p> </div>
+          <p class="light">Enter a keyword or twitter handle and get a fast summary of what people are saying.</p> </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-action-favorite-outline"></i></h2>
-          <h5 class="center">Save a Search</h5>
+          <h2 class="center black-text"><i class="mdi-content-content-paste"></i></h2>
+          <h5 class="center cyan-text text-darken-2">Analyze</h5>
 
-          <p class="light"> Save a search, and receive a daily email digest with a full analysis.</p>
+          <p class="center black-text">Utilize Natural Language Processing to analyze and rate an overall sentiment for your searches</p>
         </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center brown-text"><i class="mdi-social-public"></i></h2>
-          <h5 class="center">Track Trends Over Time</h5>
+          <h2 class="center black-text"><i class="mdi-action-trending-up"></i></h2>
+          <h5 class="center cyan-text text-darken-2">Track Trends</h5>
 
-          <p class="light">Check your dashboard to see how a saved search is trending over time.</p>
+          <p class="center black-text text-darken-2">Schedule an automated email to track how a saved search is trending over time.</p>
         </div>
       </div>
     </div>
@@ -60,7 +61,7 @@
 
 
 <!-- old -->
- <div class="section no-pad-bot" id="index-banner">
+<!--  <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <ul class="collapsible" data-collapsible="accordion">
         <li>
@@ -79,11 +80,7 @@
 
     </div>
   </div>
-
+ -->
+</body>
 
 <%= render :partial => 'layouts/footer.html.erb' %>
-
-
-
- 
-

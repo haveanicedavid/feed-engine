@@ -1,10 +1,12 @@
 
 <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!"><h6>Login</h6></a></li>
-  <li><a href="/find"><h6>Map</h6></a></li>
+<div>
+<ul id="dropdown1" class="dropdown-content nav-item">
+  <% if current_user %>
+  <li><p><%= link_to "Search tweets", user_path(current_user) %></p></li>
+  <li><p><%= link_to "Saved Searches", searches_path %></p></li>
   <li class="divider"></li>
-  <li><a href="#!"><h6>Bluh</h6></a></li>
+  <% end %>
 </ul>
 
 <nav class="cyan darken-2" role="navigation">
@@ -15,7 +17,7 @@
         <li><%= link_to "Login with twitter", "/auth/twitter", class: "white-text" %></li>
       <% else %>
         <li><%= image_tag current_user.image_url, class: "responsive-img", id: "profile-pic" %></li>
-        <li><%= link_to "Dashboard", user_path(current_user), class: "white-text" %></li>
+        <li ><a class="dropdown-button white-text" href="#!" data-activates="dropdown1">Your Dashboard<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
         <li><%= link_to "Sign Out", logout_path, method: "delete", class: "white-text" %></li>
       <% end %>
     </ul>
@@ -32,3 +34,4 @@
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
   </div>
 </nav>
+<div>

@@ -5,6 +5,22 @@ body {
   -o-background-size: cover;
 }
 
+.saved-searches {
+  background: black;
+  opacity: .7;
+}
+
+.saved-search-item {
+  opacity: 0;
+}
+.nav-item {
+  width: 30px;
+}
+
+#landing-background {
+  background: white;
+}
+
 .display-cards {
   min-height: 245px;
 }

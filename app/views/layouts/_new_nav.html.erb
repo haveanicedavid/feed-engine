@@ -1,6 +1,5 @@
 
 <!-- Dropdown Structure -->
-<div>
 <ul id="dropdown1" class="dropdown-content nav-item">
   <% if current_user %>
   <li><p><%= link_to "Search tweets", user_path(current_user) %></p></li>
@@ -10,7 +9,7 @@
 </ul>
 
 <nav class="cyan darken-2" role="navigation">
-  <div class="nav-wrapper">
+  <div class="nav-wrapper container">
     <a id="logo-container" href="/" class="brand-logo white-text" id="logo">tweetsum</a>
     <ul class="right hide-on-med-and-down">
       <% if current_user.nil? %>
@@ -34,4 +33,3 @@
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
   </div>
 </nav>
-<div>

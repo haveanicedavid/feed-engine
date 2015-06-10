@@ -5,6 +5,11 @@ body {
   -o-background-size: cover;
 }
 
+// fadein 
+.homeInfo {
+  opacity: 0;
+}
+
 .saved-searches {
   background: black;
   opacity: .7;
@@ -35,7 +40,7 @@ body {
 }
 
 #profile-pic {
-  margin-top: 10px;
+  margin-top: 6px;
   border: solid 2px white;
   border-radius: 15px;
 }

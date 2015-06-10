@@ -25,7 +25,7 @@ class SearchesController < ApplicationController
     @search = Search.find(params["id"])
     if @search.update(active?: false)
       flash[:success] = "Your search for #{@search.word} has been deactivated."
-      redirect_to user_path(current_user)
+      redirect_to searches_path
     else
       flash[:errors] = @search.errors.full_messages.join(", ")
       redirect_to user_path(current_user)

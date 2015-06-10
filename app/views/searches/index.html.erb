@@ -22,7 +22,7 @@
 </div>
 
 
-<div class="positive">
+<div class="positive hidden">
   <% positive = [] %>
   <% @saved_searches.each do |ss| %>
     <% Analysis.where(keyword: ss.word).each do |a| %>
@@ -36,7 +36,7 @@
   <%= positive %>
 </div>
 
-<div class="negative">
+<div class="negative hidden">
   <% positive = [] %>
   <% @saved_searches.each do |ss| %>
     <% Analysis.where(keyword: ss.word).each do |a| %>
@@ -50,7 +50,7 @@
   <%= positive %>
 </div>
 
-<div class="neutral">
+<div class="neutral hidden">
   <% positive = [] %>
   <% @saved_searches.each do |ss| %>
     <% Analysis.where(keyword: ss.word).each do |a| %>

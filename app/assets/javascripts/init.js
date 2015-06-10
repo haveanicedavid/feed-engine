@@ -7,8 +7,9 @@
 
     $(".searchTweet").click(function(event){ // Jquery to run Ajax on tweet display
 
-      event.preventDefault();
 
+      console.log("hello");
+      event.preventDefault();
       var searchWord = $(".searchword").val();  // Word being searched
 
       $.post("/results", { word: searchWord }).then(function(tweets){

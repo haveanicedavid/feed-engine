@@ -22,8 +22,17 @@ body {
   width: 30px;
 }
 
+.hidden {
+  display: none;
+}
+
+#chart {
+  background-color: white;
+}
+
 #landing-background {
   background: white;
+  z-index: 1;
 }
 
 .display-cards {

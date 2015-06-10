@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>FeedEngine</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "style.css" %>
+  
 </head>
 <body>
   
@@ -12,7 +18,7 @@
   <%= content_tag :div, msg, :class => "flash-#{name} flash " %>
 <% end %>
 
-<%= render :partial => 'layouts/nav.html.erb' %>
+<%= render :partial => 'layouts/new_nav.html.erb' %>
 <%= yield %>
 <%#= render :partial => 'layouts/footer.html.erb' %>
 </body>

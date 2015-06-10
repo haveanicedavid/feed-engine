@@ -32,14 +32,10 @@ class SearchesController < ApplicationController
   end
 
   def search_results
-    @word = params["search"]["keyword"]
+    @word = params["word"]
     session[:word] = @word
-    redirect_to results_path
-  end
-
-  def search_results_display
-    @word = session[:word]
     @tweets = SearchResults.new(@word).all_tweets
+    respond_with @tweets, status: 201, location: user_path(current_user)
   end
   
   private

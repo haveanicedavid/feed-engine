@@ -17,7 +17,17 @@ Bundler.require(*Rails.groups)
 
 module FeedEngine
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
+    config.action_mailer.delivery_method = :smtp
+
+       config.action_mailer.smtp_settings = {
+         address:              'smtp.mandrillapp.com',
+         port:                 '587',
+         domain:               'blogger.com',
+         user_name:            'kristina.frey.frey@gmail.com',
+         password:             ENV['MANDRILL_APPLICATION_KEY'],
+         authentication:       'plain',
+         enable_starttls_auto: true
+       }    # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 

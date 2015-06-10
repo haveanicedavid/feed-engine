@@ -1,9 +1,10 @@
 class AnalysesController < ApplicationController
   
-  def create
-    tweets_array = params["tweets"].split("|||||")
-    word = params["word"]
-    user_id = params["user_id"]
+  def index
+    word = session["word"]
+    tweets = SearchResults.new(word).all_tweets
+    tweets_array = tweets.map { |tweet| tweet.text }
+    user_id = session["user_id"]
     
     analyze = AylienAnalyze.new.grouped_analysis(tweets_array)
     
@@ -11,5 +12,4 @@ class AnalysesController < ApplicationController
     
     redirect_to user_path(current_user)
   end
-  
 end

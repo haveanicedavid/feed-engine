@@ -1,0 +1,6 @@
+<p>Please enter your email information</p>
+<%= form_for current_user do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit "Update Email" %>
+<% end %>

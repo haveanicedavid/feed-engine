@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resources :analyses, only: [:create, :index]
 
   root 'static_pages#index'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :searches, only: [:index, :show, :create, :update]
 
-  
+
  post '/results', to: "searches#search_results"
  get '/results', to: "searches#search_results_display"
 end

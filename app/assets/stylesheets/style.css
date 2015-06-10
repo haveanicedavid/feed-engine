@@ -20,8 +20,8 @@ p {
 }
 
 .parallax-container {
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 325px;
+  max-height: 350px;
   line-height: 0;
   height: auto;
   width: 100%;

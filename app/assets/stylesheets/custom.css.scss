@@ -5,6 +5,11 @@ body {
   -o-background-size: cover;
 }
 
+// fadein 
+.homeInfo {
+  opacity: 0;
+}
+
 .saved-searches {
   background: black;
   opacity: .7;

@@ -1,25 +1,13 @@
 $(document).ready(function() {	
 		
-		var lineData = [{
-	  x: 1,
-	  y: 5
-	}, {
-	  x: 10,
-	  y: 20
-	}, {
-	  x: 40,
-	  y: 10
-	}, {
-	  x: 60,
-	  y: 40
-	}, {
-	  x: 80,
-	  y: 5
-	}, {
-	  x: 100,
-	  y: 60
-	}];
+		var $positive = $(".positive");
+
+	var lineData = [];
 	
+		for (i=0; i < $positive.length; i ++) {
+		  lineData.push({x: parseInt($positive[i]), y: i});
+  	};
+		
 	var vis = d3.select('#visualisation'),
     WIDTH = 1000,
     HEIGHT = 500,

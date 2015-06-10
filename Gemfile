@@ -28,6 +28,7 @@ gem 'sentimental'
 gem 'aylien_text_api'
 gem 'responders'
 gem "d3-rails"
+gem "c3-rails"
 
 
 # Use ActiveModel has_secure_password

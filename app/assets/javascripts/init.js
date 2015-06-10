@@ -13,7 +13,7 @@
 
       $.post("/results", { word: searchWord }).then(function(tweets){
         $tweets.empty();
-        $tweets.append("<div class='row'><div class='col s3 offset-s1'><a href='/analyses' class='btn'> Analyze '" + searchWord +  "'</a></div></div>");
+        $tweets.append("<div class='row'><div class='col s3 offset-s1'><a href='/analyses' class='btn cyan darken-2'> Analyze '" + searchWord +  "'</a></div></div>");
         $tweets.append(tweets.map(function(tweet){
           return $("<div class='col s12 m4'>" +
                     "<div class='card blue-grey darken-1 tweet-cards z-depth-3 display-cards'>" +

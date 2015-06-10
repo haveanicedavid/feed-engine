@@ -5,6 +5,27 @@ body {
   -o-background-size: cover;
 }
 
+// fadein 
+.homeInfo {
+  opacity: 0;
+}
+
+.saved-searches {
+  background: black;
+  opacity: .7;
+}
+
+.saved-search-item {
+  opacity: 0;
+}
+.nav-item {
+  width: 30px;
+}
+
+#landing-background {
+  background: white;
+}
+
 .display-cards {
   min-height: 245px;
 }
@@ -19,7 +40,7 @@ body {
 }
 
 #profile-pic {
-  margin-top: 10px;
+  margin-top: 6px;
   border: solid 2px white;
   border-radius: 15px;
 }

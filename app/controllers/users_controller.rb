@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   skip_before_action :check_email, :only => [:edit, :update]
+
   def show
     @analyses = Analysis.where(user_id: current_user.id)
-    @saved_searches = Search.where(user_id: current_user.id, active?: true)
   end
 
   def edit
@@ -15,4 +15,5 @@ class UsersController < ApplicationController
       flash[:error] = "didn't work"
     end
   end
+  
 end

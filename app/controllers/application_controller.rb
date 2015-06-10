@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_email
-    if current_user.email? == false
+    if current_user && current_user.email? == false
       redirect_to edit_user_path(current_user)
     end
   end

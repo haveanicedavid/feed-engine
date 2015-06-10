@@ -1,19 +1,19 @@
 (function($){
   $(function(){
 
-    var $tweets = $("#tweets");
+    var $tweets = $("#tweets"); // Tweets selector
 
     $('.button-collapse').sideNav();
 
-    $(".searchTweet").click(function(event){
+    $(".searchTweet").click(function(event){ // Jquery to run Ajax on tweet display
 
       event.preventDefault();
 
-      var searchWord = $(".searchword").val(); 
+      var searchWord = $(".searchword").val();  // Word being searched
 
       $.post("/results", { word: searchWord }).then(function(tweets){
         $tweets.empty();
-        $tweets.append("<div class='row'><div class='col s3 offset-s1'><a href='/analyses' class='btn'> Analyze Tweets </a></div></div>");
+        $tweets.append("<div class='row'><div class='col s3 offset-s1'><a href='/analyses' class='btn'> Analyze '" + searchWord +  "'</a></div></div>");
         $tweets.append(tweets.map(function(tweet){
           return $("<div class='col s12 m4'>" +
                     "<div class='card blue-grey darken-1 tweet-cards z-depth-3 display-cards'>" +
@@ -34,7 +34,15 @@
       });
 
     });
+    // Scrollfire
+      var options = [
+          {selector: '#staggered-test', offset: 300, callback: 'Materialize.toast("OOOohhhh!!", 1500 )' },
+          // {selector: '#staggered-test', offset: 205, callback: 'Materialize.toast("Please continue scrolling!", 1500 )' },
+          {selector: '#staggered-test', offset: 250, callback: 'Materialize.showStaggeredList("#staggered-test")' },
+          // {selector: '#image-test', offset: 500, callback: 'Materialize.fadeInImage("#image-test")' }
+        ];
+        Materialize.scrollFire(options);
 
-      $('.parallax').parallax();
+      $('.parallax').parallax(); // Handles parallax scrolling
   }); // end of document ready
 })(jQuery); // end of jQuery name space

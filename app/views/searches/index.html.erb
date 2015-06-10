@@ -21,6 +21,52 @@
   </div>
 </div>
 
+
+<div class="positive">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "positive" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+<div class="negative">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "negative" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+<div class="neutral">
+  <% positive = [] %>
+  <% @saved_searches.each do |ss| %>
+    <% Analysis.where(keyword: ss.word).each do |a| %>
+      <% a.analysis.each do |k, v| %>
+        <% if k == "neutral" %>
+          <% positive << (v.split(",").first.to_s.delete!("[")) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= positive %>
+</div>
+
+<div id="chart"></div>
+
+
 <!-- <div class="row user-header">
   <div class="col s4 offset-s2">
       <table class="centered hoverable responsive-table teal lighten-3">

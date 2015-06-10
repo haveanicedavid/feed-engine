@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello <%= @user.name %>,</h1>
+    <p>
+      Here is your daily digest email for your Tweetsum saved search:
+    </p>
+    <h4><%= @analysis.keyword %></h4>
+    <div class="col s4">
+      <h6><%= @analysis.created_at.to_date %></h6>
+    </div>
+  </div>
+  <div class="row">
+  <table class="centered hoverable responsive-table analyses-table teal lighten-4">
+    <thead>
+      <tr>
+        <th data-field="number">Number</th>
+        <th data-field="name">Sentiment</th>
+        <th data-field="number">Polarity</th>
+      </tr>
+    <thead>
+    <tbody>
+      <% @analysis.analysis.each do |k, v| %>
+      <tr>
+        <td><%= v.split(",").first.to_s.delete!("[") %></td>
+        <td><%= k %></td>
+        <td><%= v.split(",").last.to_s.delete!("]").to_f.round(3) %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  </body>
+</html>

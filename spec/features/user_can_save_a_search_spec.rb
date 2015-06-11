@@ -12,8 +12,13 @@ RSpec.describe "user can create search", type: :feature do
   it "can save a search" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     
-    visit user_path(user)
+    visit "/searches"
     
+    fill_in "user[email]", with: "dave@dave.com"
+    click_button "Update Email"
+    
+    visit "/searches"
+
     fill_in "search[word]", with: "bluebottlecoffee"
     click_button "Save Search"
     
@@ -23,15 +28,20 @@ RSpec.describe "user can create search", type: :feature do
   
   it "can make a search inactive" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit "/searches"
     
-    visit user_path(user)
+    fill_in "user[email]", with: "dave@dave.com"
+    click_button "Update Email"
+    
+    visit "/searches"
     
     fill_in "search[word]", with: "bluebottlecoffee"
     click_button "Save Search"
     
     expect(page).to have_content("bluebottlecoffee")
     
-    click_link "Deactivate"
+    click_link "Remove"
 
     expect(page).to have_content("Your search for bluebottlecoffee has been deactivated.")
   end

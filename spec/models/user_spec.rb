@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Search, type: :model do
+RSpec.describe User, type: :model do
   let(:user) { User.create(nickname: "kb", 
                            name: "kristina brown",
                            image_url: "www.examplestuff.com",
@@ -10,12 +10,15 @@ RSpec.describe Search, type: :model do
                            provider: "twitter",
                            email: "example@sample.com",
                            ) }
-  let(:search) { Search.create(word: "puppies",
-                               active?: true,
-                               user_id: user.id
-                               )}                         
 
   it "is valid" do 
-    expect(search).to be_valid
+    expect(user).to be_valid
+  end
+  
+  it "knows if there is no email" do 
+    expect(user.email?).to eq(true)
+    user.update(email: nil)
+    
+    expect(user.email?).to eq(false)
   end
 end

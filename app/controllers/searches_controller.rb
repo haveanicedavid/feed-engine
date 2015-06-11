@@ -17,9 +17,6 @@ class SearchesController < ApplicationController
       @search.update(user_id: current_user.id)
       flash.now[:success] = " #{@search.word} is a saved search!"
       redirect_to searches_path
-    else
-      flash.now[:errors] = @search.errors.full_messages.join(", ")
-      redirect_to user_path(current_user)
     end
   end
   
@@ -28,9 +25,6 @@ class SearchesController < ApplicationController
     if @search.update(active?: false)
       flash[:success] = "Your search for #{@search.word} has been deactivated."
       redirect_to searches_path
-    else
-      flash[:errors] = @search.errors.full_messages.join(", ")
-      redirect_to user_path(current_user)
     end
   end
 

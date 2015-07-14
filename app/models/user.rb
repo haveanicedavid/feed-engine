@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
     user
   end
 
-  def self.email?
-    if self.email.empty?
+  def email?
+    if email.nil?
       false
     else
       true

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Search, type: :model do
+RSpec.describe Analysis, type: :model do
   let(:user) { User.create(nickname: "kb", 
                            name: "kristina brown",
                            image_url: "www.examplestuff.com",
@@ -10,12 +10,12 @@ RSpec.describe Search, type: :model do
                            provider: "twitter",
                            email: "example@sample.com",
                            ) }
-  let(:search) { Search.create(word: "puppies",
-                               active?: true,
-                               user_id: user.id
-                               )}                         
+  let(:analysis) { Analysis.create(keyword: "puppies",
+                                   analysis: {thing: "this", that: "thing"},
+                                   user_id: user.id
+                                  )}                         
 
   it "is valid" do 
-    expect(search).to be_valid
+    expect(analysis).to be_valid
   end
 end

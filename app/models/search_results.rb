@@ -5,7 +5,7 @@ class SearchResults
     @search = search
   end
 
-  def self.service
+  def service
     @service ||= TwittersearchService.new
   end
 
@@ -18,7 +18,6 @@ class SearchResults
       t
     end
   end
-
 end
 
 class Tweet < OpenStruct
